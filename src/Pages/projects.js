@@ -17,11 +17,11 @@ const Projects = () => {
 
   useEffect(()=>{
     getRepos();
-  },[]);
+  },[getRepos]);
 
   const mountRepos = gitHubRepositories.map((repo) => {
     return (
-      <RepoCard id={repo.id} html_url={repo.html_url} name={repo.name} description={repo.description} language={repo.language}/>
+      <RepoCard key={repo.id} html_url={repo.html_url} name={repo.name} description={repo.description} language={repo.language}/>
     );
   });
 
